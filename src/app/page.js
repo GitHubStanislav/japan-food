@@ -1,12 +1,11 @@
+import Header from "@/app/componenets/Layout/Header";
 
 function Home() {
   return (
-
-   <div>
-     <header className='bg-zinc-300'>Hello</header>
-       <p>Hello</p>
-   </div>
-  )
+    <>
+      <Header />
+    </>
+  );
 }
 
-export default Home
+export default Home;
