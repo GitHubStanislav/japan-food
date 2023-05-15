@@ -11,21 +11,21 @@ const HeaderCartButton = (props) => {
     return currentValue + item.amount;
   }, 0);
 
-  const buttonClasses = `${styles.button} ${
+  const buttonClasses = `${styles.button}${
     buttonIsAnimated ? styles.bump : ""
-  } `;
+  }`;
 
   useEffect(() => {
     if (cartContext.items.length === 0) {
       return;
     }
     setButtonIsAnimated(true);
-   const timer= setTimeout(()=>{
-      setButtonIsAnimated(false)
-    },300)
-      return ()=>{
-       clearTimeout(timer)
-      }
+    const timer = setTimeout(() => {
+      setButtonIsAnimated(false);
+    }, 300);
+    return () => {
+      clearTimeout(timer);
+    };
   }, [cartContext.items]);
 
   return (
