@@ -1,11 +1,11 @@
 import styles from "./Modal.module.css";
-const Backdrop = () => {
-  return <div className={styles.backdrop}></div>;
+const Backdrop = (props) => {
+  return <div onClick={props.OnHideCart} className={styles.backdrop}></div>;
 };
 const ModalWindow = (props) => {
   return (
     <div className={styles.modal}>
-      <div className={styles.content}>{props.children}</div>
+      <div>{props.children}</div>
     </div>
   );
 };
@@ -13,7 +13,7 @@ const ModalWindow = (props) => {
 const Modal = (props) => {
   return (
     <>
-      <Backdrop></Backdrop>
+      <Backdrop OnHideCart={props.OnHideCart}></Backdrop>
       <ModalWindow>{props.children}</ModalWindow>
     </>
   );

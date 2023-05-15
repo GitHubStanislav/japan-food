@@ -11,11 +11,11 @@ function Home() {
      setCartVisible(true)
     }
     const hideCartHandler = ()=>{
-        setCartVisible(true)
+        setCartVisible(false)
     }
   return (
     <>
-        {cartIsVisible && <Cart />}
+        {cartIsVisible && <Cart onHideCart ={hideCartHandler} />}
       <Header onShowCart ={showCartHandler} />
       <main>
         <Meals />
