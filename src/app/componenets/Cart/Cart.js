@@ -6,9 +6,11 @@ import CartItem from "@/app/componenets/Cart/CartItem";
 
 const Cart = (props) => {
   const cartContext = useContext(CartContext);
-  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`;
+  const totalAmount = `$${Math.abs(cartContext.totalAmount).toFixed(2)}`;
   const hasItems = cartContext.items.length > 0;
-  const removeCartItemHandler = (id) => {};
+  const removeCartItemHandler = (id) => {
+      cartContext.removeItem(id)
+  };
   const addCartHandler = (item) => {
       cartContext.addItem({...item,amount:1})
   };
