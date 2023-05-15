@@ -11,7 +11,7 @@ const HeaderCartButton = (props) => {
     return currentValue + item.amount;
   }, 0);
 
-  const buttonClasses = `${styles.button}${
+  const buttonClasses = `${styles.button} ${
     buttonIsAnimated ? styles.bump : ""
   }`;
 
